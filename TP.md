@@ -21,20 +21,11 @@ db.products.insertOne(
 db.products.find() 
 db.products.find().pretty()
 ```
-```
-db.products.updateOne(
-    {
-        name:"iPhone"
-        },
-    {
-        $set:{ price : 1119.99}
-        }
-        )
-```
+
 ```
 db.products.find(
     {
-        price {$gt :4}
+        price: {$gt :4}
     }
     )
 ```
@@ -42,10 +33,10 @@ db.products.find(
 db.products.insertOne(
     {
         name:"iPhone XS",
-         price : 19.99, 
-         details:{
-             ram:"3gb",
-              battery:"2500mAh"
+        price : 19.99, 
+        details:{
+            ram:"3gb",
+            battery:"2500mAh"
               }
               })
 ```
@@ -77,21 +68,54 @@ db.products.updateOne(
 ```
 db.products.updateOne(
     {
-        tags:"ok"
+        name:"iPhone"
         },
     {
-        $set:{tags.$:"FRANCE"}
+        $set:{ price : 1119.99}
+        }
+        )
+        db.products.updateOne(
+    {
+        name:"iPhone"
+        },
+    {
+        $set:{ tags[0] : "ordii"}
+        }
+        )
+```
+```
+db.products.updateOne(
+    {
+        tags:"ordi"
+        },
+    {
+        $set:{tags:"$FRANCE"}
         })
 ```
 
 ## crud : Create, Read, Update, Delete
 ### Create
 ```
-db.products.insertMany([{ _id: "Article", name:
-« chasse et peche", date: 10/03, auteur: Pablo},
-{ _id: "Article2", name: « Macron Démission", auteur:
-Brigitte, date: 6/01 }, { _id: « article3", name:
-"Téléfoot", date: 08/09, auteur: Denis Brognard}])
+db.products.insertMany(
+    [
+        { 
+            _id: "Article", 
+            name:"chasse et peche", 
+            date: 10/03, 
+            auteur: Pablo
+            },
+        {
+            _id: "Article2", 
+            name: "Macron Démission", 
+            auteur:"Brigitte", 
+            date: 6/01 
+            }, 
+        { 
+            _id: " article3", 
+            name: "Téléfoot", 
+            date: 08/09, 
+            auteur: Denis Brognard
+            }])
 ```
 ```
 db.products.insertMany([{ _id: "Citroen", name:
@@ -123,32 +147,41 @@ db.user.find(
         }
      ).pretty()
 ```
-Trouver tous les array
-Opérateurs IN et NIN (not in)
+
+### Opérateurs IN et NIN (not in)
 ```
-db.user.find( { age: { $in: [ 5, 15 ] } } ).pretty()
+db.user.find( 
+    { 
+        age: { $in: [ 5, 15 ] } } ).pretty()
 ```
 ```
 db.user.find( { age: { $nin: [ 5, 15 ] } } ).pretty()
 ```
-Opérateur OR
+#### Opérateur OR = ou
 ```
 db.user.find( { $or: [ { age: { $lt: 20 } }, { price: 10 } ] } )
 ```
-Opérateur AND
+#### Opérateur AND
 ```
 db.user.find( { $and: [ { age: { $ne: 18 } }, { index: {$in: [2, 4, 6, 8 ]} } ] } ).pretty()
 ```
-Opérateur X un certain champs avec un certain type.
+#### Opérateur X un certain champs avec un certain type.
 Si le document à une certaine propriété
 ```
-db.users.find({friends: {sin: [{id: 0, name: « Matilda Schultz » }]}}).pretty()
+db.users.find(
+    {
+        friends: {
+            sin: [{
+        id: 0, 
+        name: "Matilda Schultz " 
+        }
+    ]}}).pretty()
 ```
 ```
 db.users.find({tags: {$exists: false}}).pretty()
 ```
 ```
-> db.users.find({tags: {$type: « Array"}}).pretty()
+> db.users.find({tags: {$type: "Array"}}).pretty()
 ```
 Validation Action :
 - erreur
