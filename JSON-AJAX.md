@@ -3,7 +3,7 @@ JavaScript Object Notation
 JSON is a syntax for storing and exchanging data.
 JSON is text, written with JavaScript object notation.
 <figure>
-    <img src="../img/JSON.png" width="650" alt="JSON vs XML" align="center">
+    <img src="img/JSON.png" width="650" alt="JSON vs XML" align="center">
     <figcaption><em>Fig. 1: JSON vs XML syntax </em></figcaption>
     <br><br>
 </figure>
@@ -21,11 +21,11 @@ Originally, the only way to submit some form data to a server was through the `<
  # AJAX:
 It allows us to read from a web server after the page has loaded and update a web page without reloading the page. And finally send data in the background while the user is interacting with the Website.
 <figure>
-    <img src="../img/XHR.png" width="650" alt="JSON vs XML" align="center">
+    <img src="img/XHR.png" width="650" alt="JSON vs XML" align="center">
     <br><br>
 </figure>
 <figure>
-    <img src="../img/ajaxjquery.png" width="650" alt="JSON vs XML" align="center">
+    <img src="img/ajaxjquery.png" width="650" alt="JSON vs XML" align="center">
     <br><br>
 </figure>
 
@@ -46,7 +46,18 @@ myAjaxfunction() {
 ```
 Ajax is a combination of tools of using the fetch API, using HTTP, using JSON to communicate with servers.
 <figure>
-    <img src="../img/ajaxp.png" width="650" alt="JSON vs XML" align="center">
+    <img src="img/ajaxp.png" width="650" alt="JSON vs XML" align="center">
     <figcaption><em>Fig. 2: The full picture of the comminucation using AJAX </em></figcaption>
     <br><br>
 </figure>
+
+# BDDR:
+une base de données relationnelle est une base de données où l'information est organisée dans des tableaux à deux dimensions
+<figure>
+    <img src="img/Structure-of-the-relational-database-Mvsemdm-Each-box-on-the-figure-above-contains-one.png" width="650" alt="JSON vs XML" align="center">
+    <figcaption><em>Fig. 3: BDDR </em></figcaption>
+    <br><br>
+</figure>
+
+# MongoDB
+MongoDB est un système de gestion de base de données orienté documents, répartissable sur un nombre quelconque d'ordinateurs et ne nécessitant pas de schéma prédéfini des données.
