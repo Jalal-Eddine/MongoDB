@@ -1,5 +1,6 @@
 {
-	name: 'testing',
-	number:'1234',
+	"name": "testing",
+	"number":1234,
+	"category" : ["dev", "design"]
 	
 }
